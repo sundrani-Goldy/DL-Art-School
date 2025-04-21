@@ -1,0 +1,3 @@
+from .unified_voice2 import register_unified_voice2
+from .unified_voice3 import register_unified_voice3
+from .unified_voice4 import register_unified_voice4

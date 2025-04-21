@@ -50,7 +50,7 @@ with open('/home/ubuntu/Testing/DL-Art-School/experiments/transcriptions.txt', '
         for i in range(0, len(ttsd), batch_size):
             yield [preprocess_word(t, True) for t in ttsd[i:i+batch_size]]
 
-    trainer = BpeTrainer(special_tokens=['[STOP]', '[UNK]', '[SPACE]'], vocab_size=255)
+    trainer = BpeTrainer(special_tokens=['[STOP]', '[UNK]', '[SPACE]'], vocab_size=256)
     tokenizer = Tokenizer(BPE(unk_token="[UNK]"))
     tokenizer.pre_tokenizer = Whitespace()
     tokenizer.train_from_iterator(batch_iterator(), trainer, length=len(ttsd))
